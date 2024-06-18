@@ -16,7 +16,38 @@ img{
     opacity: 0;
 }
 
+h1 {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 60px;
+}
 
+.highlight {
+    position: relative;
+    display: inline-block;
+    color: inherit;
+    /* Inherit color from h1 */
+}
+
+.highlight::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 3px;
+    background-color: white;
+    transition: width 0.4s ease-in-out;
+    transform: translateY(-50%);
+}
+
+.highlight:hover::before {
+    width: 100%;
+}
 
 .container{
     font-family: "Roboto", sans-serif;
@@ -73,11 +104,16 @@ img{
     padding: 0 15px;
     border-radius: 5px;
     margin-top: 20px;
-    cursor: pointer;
+    cursor: default;
 }
 
 .task:hover img{
     opacity: 1;
     transition: .3s;
     cursor: pointer;
+}
+
+.checked{
+    background-color: #C8A2C8;
+    text-decoration: line-through;
 }
